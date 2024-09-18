@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(145deg, rgba(58, 141, 255, 1) 0%, rgba(134, 185, 255, 1) 50%, rgba(182, 202, 245, 1) 100%);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .top-bar {
+            background-color: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-section img {
+            border-radius: 50%;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #f5f7fa;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #6b7280;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-buttons button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .left-sidebar {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-sidebar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .left-sidebar ul li {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .left-sidebar ul li:hover,
+        .left-sidebar ul li.active {
+            background-color: #f0f4fa;
+        }
+
+        .reports-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .chart-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .chart {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid p-4">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <img src="path-to-profile-image.png" alt="Olivia Miller" width="50" height="50">
+                <h5>Olivia Miller</h5>
+            </div>
+
+            <!-- Search Dashboard -->
+            <div class="search-bar mx-3">
+                <input class="form-control" type="text" placeholder="Search Dashboard...">
+            </div>
+
+            <!-- Switch Company Dropdown -->
+            <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Switch Company</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Company 1</a></li>
+                    <li><a class="dropdown-item" href="#">Company 2</a></li>
+                    <li><a class="dropdown-item" href="#">Company 3</a></li>
+                </ul>
+            </div>
+
+            <!-- Welcome Back Dropdown -->
+            <div class="dropdown ms-3">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Welcome back, Yossi!</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons mb-4">
+            <button class="active">Dashboard</button>
+            <button>Receivables</button>
+            <button>Returns</button>
+            <button>Customers</button>
+            <button>Payable</button>
+            <button>Sales</button>
+            <button>Inventory</button>
+            <button>Imports</button>
+            <button>Cutting Tickets</button>
+            <button>Showroom</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row">
+            <!-- Left Sidebar (Reports) -->
+            <div class="col-lg-3 mb-4">
+                <div class="left-sidebar">
+                    <h5>Reports</h5>
+                    <ul>
+                        <li class="active">Cut & Sold Lookup</li>
+                        <li>Inventory Snap Shot</li>
+                        <li>Balance To Sell Sales Summary</li>
+                        <li>Open Orders to Pick</li>
+                        <li>Period Comparison Report</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="col-lg-9">
+                <div class="reports-section">
+                    <!-- Stats Cards -->
+                    <div class="stats-cards">
+                        <div class="card">
+                            <h4>$32,350.00</h4>
+                            <p>Total Revenue</p>
+                        </div>
+                        <div class="card">
+                            <h4>$6000</h4>
+                            <p>Total Expenses</p>
+                        </div>
+                        <div class="card">
+                            <h4>$56,034.00</h4>
+                            <p>Accounts Receivable</p>
+                        </div>
+                        <div class="card">
+                            <h4>$67,083.00</h4>
+                            <p>Accounts Payable</p>
+                        </div>
+                        <div class="card">
+                            <h4>3,478</h4>
+                            <p>Items Missing Images</p>
+                        </div>
+                        <div class="card">
+                            <h4>237</h4>
+                            <p>FOB Costs</p>
+                        </div>
+                        <div class="card">
+                            <h4>160</h4>
+                            <p>PO Items Missing Costs</p>
+                        </div>
+                        <div class="card">
+                            <h4>0/$0.00</h4>
+                            <p>Booked</p>
+                        </div>
+                    </div>
+
+                    <!-- Chart Section -->
+                    <div class="chart-section">
+                        <div class="chart">
+                            <h5>Invoices</h5>
+                            <canvas id="invoiceChart"></canvas>
+                        </div>
+                        <div class="chart">
+                            <h5>Sales Forecast</h5>
+                            <canvas id="salesForecastChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx1 = document.getElementById('invoiceChart').getContext('2d');
+        const invoiceChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [{
+                    label: 'This Week',
+                    data: [12000, 19000, 30000, 50000, 20000, 30000, 45000],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Last Week',
+                    data: [22000, 29000, 25000, 45000, 30000, 40000, 60000],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('salesForecastChart').getContext('2d');
+        const salesForecastChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [{
+                    label: 'Weighted',
+                    data: [20000, 25000, 40000, 35000, 45000, 55000, 60000],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Won',
+                    data: [15000, 20000, 35000, 30000, 40000, 50000, 55000],
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
